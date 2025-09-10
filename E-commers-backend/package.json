@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^1.20.3",
+    "connect-mongodb-session": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "express-session": "^1.18.2",
+    "express-validator": "^7.2.1",
+    "mongodb": "^6.18.0",
+    "mongoose": "^8.17.2"
+  },
+  "name": "e-commers-backend",
+  "version": "1.0.0",
+  "description": "This is my backend code ",
+  "main": "app.js",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Vishwas Patel",
+  "license": "ISC"
+}
