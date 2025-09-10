@@ -7,8 +7,6 @@ const productSchema = new mongoose.Schema(
     category: { type: String, required: true },
     image: { type: String, required: true },
     detail: { type: String },
-    Wishlist: { type: Boolean, default: false },
-    AddtoCart: { type: Boolean, default: false },
   },
   { timestamps: true }
 );
