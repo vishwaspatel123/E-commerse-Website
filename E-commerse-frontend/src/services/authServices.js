@@ -1,11 +1,14 @@
 export const postLogin = async (email, password) => {
-  const response = await fetch("http://localhost:5000/api/auth/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ email, password }),
-  });
+  const response = await fetch(
+    "https://e-commerse-website-backend.onrender.com/api/auth/login",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    }
+  );
   if (!response.ok) {
     throw new Error("Failed to add item");
   }
@@ -14,20 +17,23 @@ export const postLogin = async (email, password) => {
 
 export const postSignup = async (user) => {
   const { name, email, password, address, phone, profileImage } = user;
-  const response = await fetch("http://localhost:5000/api/auth/signup", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      name,
-      email,
-      password,
-      address,
-      phone,
-      profileImage,
-    }),
-  });
+  const response = await fetch(
+    "https://e-commerse-website-backend.onrender.com/api/auth/signup",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        password,
+        address,
+        phone,
+        profileImage,
+      }),
+    }
+  );
   if (!response.ok) {
     throw new Error("Failed to add item");
   }
@@ -35,15 +41,18 @@ export const postSignup = async (user) => {
 };
 
 export const postLogout = async (userid) => {
-  const response = await fetch("http://localhost:5000/api/auth/logout", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      userid,
-    }),
-  });
+  const response = await fetch(
+    "https://e-commerse-website-backend.onrender.com/api/auth/logout",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userid,
+      }),
+    }
+  );
   if (!response.ok) {
     throw new Error("Failed to add item");
   }

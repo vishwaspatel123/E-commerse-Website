@@ -1,12 +1,15 @@
 export const additem = async (product) => {
   const { name, image, price, category, detail } = product;
-  const response = await fetch("http://localhost:5000/api/product", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ name, image, price, category, detail }),
-  });
+  const response = await fetch(
+    "https://e-commerse-website-backend.onrender.com/api/product",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, image, price, category, detail }),
+    }
+  );
   if (!response.ok) {
     throw new Error("Failed to add item");
   }
@@ -14,7 +17,9 @@ export const additem = async (product) => {
 };
 
 export const getitem = async () => {
-  const response = await fetch("http://localhost:5000/api/product");
+  const response = await fetch(
+    "https://e-commerse-website-backend.onrender.com/api/product"
+  );
   if (!response.ok) {
     throw new Error("Failed to fetch item");
   }
@@ -24,7 +29,7 @@ export const getitem = async () => {
 
 export const getitembycategory = async (categoryname) => {
   const response = await fetch(
-    `http://localhost:5000/api/product/category/${categoryname}`
+    `https://e-commerse-website-backend.onrender.com/api/product/category/${categoryname}`
   );
   if (!response.ok) {
     throw new Error("Failed to fetch item by category");
@@ -34,13 +39,16 @@ export const getitembycategory = async (categoryname) => {
 };
 
 export const additemToWishlist = async (productid, userid) => {
-  const response = await fetch("http://localhost:5000/api/product/Wishlist", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ productid, userid }),
-  });
+  const response = await fetch(
+    "https://e-commerse-website-backend.onrender.com/api/product/Wishlist",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ productid, userid }),
+    }
+  );
   if (!response.ok) {
     throw new Error("Failed to add item");
   }
@@ -49,7 +57,7 @@ export const additemToWishlist = async (productid, userid) => {
 
 export const getwishlistitem = async (id) => {
   const response = await fetch(
-    `http://localhost:5000/api/product/Wishlist/${id}`
+    `https://e-commerse-website-backend.onrender.com/api/product/Wishlist/${id}`
   );
   if (!response.ok) {
     throw new Error("Failed to fetch item");
@@ -59,13 +67,16 @@ export const getwishlistitem = async (id) => {
 };
 
 export const wishlistitemRemove = async (userid, productid) => {
-  const response = await fetch(`http://localhost:5000/api/product/wishlist`, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ userid, productid }),
-  });
+  const response = await fetch(
+    `https://e-commerse-website-backend.onrender.com/api/product/wishlist`,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ userid, productid }),
+    }
+  );
   if (!response.ok) {
     throw new Error("Failed to add item");
   }
@@ -73,13 +84,16 @@ export const wishlistitemRemove = async (userid, productid) => {
 };
 
 export const additemToCart = async (userid, productid) => {
-  const response = await fetch("http://localhost:5000/api/product/Addtocart", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ userid, productid }),
-  });
+  const response = await fetch(
+    "https://e-commerse-website-backend.onrender.com/api/product/Addtocart",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ userid, productid }),
+    }
+  );
   if (!response.ok) {
     throw new Error("Failed to add item");
   }
@@ -88,7 +102,7 @@ export const additemToCart = async (userid, productid) => {
 
 export const getCartitem = async (id) => {
   const response = await fetch(
-    `http://localhost:5000/api/product/Addtocart/${id}`
+    `https://e-commerse-website-backend.onrender.com/api/product/Addtocart/${id}`
   );
   if (!response.ok) {
     throw new Error("Failed to fetch item");
@@ -98,13 +112,16 @@ export const getCartitem = async (id) => {
 };
 
 export const CartitemRemove = async (userid, productid) => {
-  const response = await fetch(`http://localhost:5000/api/product/Addtocart`, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ userid, productid }),
-  });
+  const response = await fetch(
+    `https://e-commerse-website-backend.onrender.com/api/product/Addtocart`,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ userid, productid }),
+    }
+  );
   if (!response.ok) {
     throw new Error("Failed to add item");
   }
